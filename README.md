@@ -33,7 +33,7 @@ my code could not count to four for the following cases:
 
 Put in a discussion here.
 
-e.g. My code could compute 1+2=3, however it took the QC 3 seconds and out of 1024 trials it did it wrong in 2% of the cases. So it might be not the best choice for this task. However, they are awesome for optimizing the [traveling salesman problem] (https://xkcd.com/285/).
+e.g. My code could compute 1+2=3, however it took the QC 3 seconds and out of 1024 trials it did it wrong in 2% of the cases. So it might be not the best choice for this task. However, they are awesome for optimizing the [traveling salesman problem](https://xkcd.com/285/).
 
 ## Outlook
 
