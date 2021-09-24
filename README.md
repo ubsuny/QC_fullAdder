@@ -1,6 +1,6 @@
 # Implementing a full adder on a Quantum Computer (meaningful title here)
 
-This serves as a homework template for CP1 2021 Homework3.
+This serves as a homework template for CP1 2021 Homework3. Such a good idea!
 
 ## Introduction
 
