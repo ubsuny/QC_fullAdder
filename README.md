@@ -1,4 +1,4 @@
-# Implementing a full adder on a Quantum Computer (meaningful title here)
+# Implementing a full adder on a Quantum Computer (really meaningful title here)
 
 This serves as a homework template for CP1 2021 Homework3.
 
