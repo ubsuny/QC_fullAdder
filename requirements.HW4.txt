@@ -1,0 +1,4 @@
+nbval
+jupyterlab
+pycodestyle_magic
+qiskit[visualization]

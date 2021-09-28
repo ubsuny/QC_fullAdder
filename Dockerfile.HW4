@@ -1,0 +1,60 @@
+ # base image, make sure it is AMD64, ARMv7, ARMv8 available
+FROM ubuntu:hirsute
+# Create a user that does not have root privileges
+# Set username...
+ARG username=compphys
+# ... with UID 1000
+ENV MY_UID 1000
+
+# ... and home directory /results (to be mounted on the host system)
+ENV HOME /results
+# Create the user itself so you don't have to work as root
+RUN useradd --create-home --home-dir ${HOME} --uid ${MY_UID} ${username}
+
+# Set the working directory to /app
+WORKDIR /app
+
+ADD . /app
+
+ENV CPT_PATH=/app/compphys
+ENV PYTHONPATH=/app/compphys_python
+ENV PATH=${HOME}/.local/bin:/bin/app/compphys:$PATH
+
+# apt, use system package to save time in using binary packages
+RUN apt -yq update && DEBIAN_FRONTEND=noninteractive apt install --no-install-recommends -y \
+    wget g++ libtool rsync make tzdata zsh git curl nano vim less bless \
+    python3-dev python3-numpy python3-pip python3-numpy python3-scipy \
+    python3-matplotlib python3-nose python3-pandas python3-sympy \
+    pylint pycodestyle flake8 python3-pytest-pylint python3-pytest libhdf5-dev \
+&& rm -rf /var/lib/apt/lists/*
+
+# pip, use packages from requirements file
+COPY ./requirements.HW4.txt /tmp/requirements.txt
+RUN pip3 install --no-cache-dir --requirement /tmp/requirements.txt
+
+# Set the python path, inlinking the executable to python
+RUN ln -s /usr/bin/python3 /usr/bin/python
+
+# install oh-my-zsh with powerlevel10k for user
+RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.1/zsh-in-docker.sh)" -- \
+    -p git -p python -pylint -p command-not-found -p history-substring-search
+
+USER root
+RUN chown -R ${MY_UID} ${HOME}
+# Disallow writing to the /app directory so students do not delete their work accidentally. 
+RUN chmod -R 555 /app
+
+# Set the cwd to /results
+WORKDIR ${HOME}
+
+# Switch to our newly created user
+USER ${username}
+
+# Allow incoming connections on port 8888
+EXPOSE 8888
+
+# Sit in "results"
+WORKDIR ${HOME}
+
+# Run notebook when the container launches
+CMD ["jupyter-lab", "--ip", "0.0.0.0"]
