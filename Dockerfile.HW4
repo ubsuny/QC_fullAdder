@@ -30,14 +30,14 @@ RUN apt -yq update && DEBIAN_FRONTEND=noninteractive apt install --no-install-re
 
 # pip, use packages from requirements file
 COPY ./requirements.HW4.txt /tmp/requirements.txt
-RUN pip3 install --no-cache-dir --requirement /tmp/requirements.txt
+# RUN pip3 install --no-cache-dir --requirement /tmp/requirements.txt
 
 # Set the python path, inlinking the executable to python
 RUN ln -s /usr/bin/python3 /usr/bin/python
 
 # install oh-my-zsh with powerlevel10k for user
 RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.1/zsh-in-docker.sh)" -- \
-    -p git -p python -pylint -p command-not-found -p history-substring-search
+    -p git -p python -p pylint -p command-not-found -p history-substring-search
 
 USER root
 RUN chown -R ${MY_UID} ${HOME}
