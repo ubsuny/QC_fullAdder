@@ -2,4 +2,4 @@ nbval
 jupyterlab
 pycodestyle_magic
 numpy >= 1.20.1  # for h5py on Apple M1
-#qiskit[visualization]
+qiskit[visualization]

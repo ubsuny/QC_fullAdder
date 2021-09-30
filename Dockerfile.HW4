@@ -25,12 +25,13 @@ RUN apt -yq update && DEBIAN_FRONTEND=noninteractive apt install --no-install-re
     wget g++ libtool rsync make tzdata zsh git curl nano vim less bless \
     python3-dev python3-numpy python3-pip python3-numpy python3-scipy \
     python3-matplotlib python3-nose python3-pandas python3-sympy \
-    pylint pycodestyle flake8 python3-pytest-pylint python3-pytest python3-h5py libhdf5-dev \
+    pylint pycodestyle flake8 python3-pytest-pylint python3-pytest \
+    libffi-dev python3-h5py libhdf5-dev \
 && rm -rf /var/lib/apt/lists/*
 
 # pip, use packages from requirements file
 COPY ./requirements.HW4.txt /tmp/requirements.txt
-# RUN pip3 install --no-cache-dir --requirement /tmp/requirements.txt
+RUN pip3 install --no-cache-dir --requirement /tmp/requirements.txt
 
 # Set the python path, inlinking the executable to python
 RUN ln -s /usr/bin/python3 /usr/bin/python
