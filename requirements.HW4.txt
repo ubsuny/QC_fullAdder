@@ -1,5 +1,5 @@
 nbval
-jupyterlab
+jupyterlab # fails for arm/v7
 pycodestyle_magic
 numpy >= 1.20.1  # for h5py on Apple M1
 qiskit[visualization]
