@@ -7,18 +7,9 @@ ARG username=compphys
 ENV MY_UID 1000
 
 # ... and home directory /results (to be mounted on the host system)
-ENV HOME /results
+ENV HOME /home/${username}
 # Create the user itself so you don't have to work as root
 RUN useradd --create-home --home-dir ${HOME} --uid ${MY_UID} ${username}
-
-# Set the working directory to /app
-WORKDIR /app
-
-ADD . /app
-
-ENV CPT_PATH=/app/compphys
-ENV PYTHONPATH=/app/compphys_python
-ENV PATH=${HOME}/.local/bin:/bin/app/compphys:$PATH
 
 # apt, use system package to save time in using binary packages
 RUN apt -yq update && DEBIAN_FRONTEND=noninteractive apt install --no-install-recommends -y \
@@ -36,26 +27,22 @@ RUN pip3 install --no-cache-dir --requirement /tmp/requirements.txt
 # Set the python path, inlinking the executable to python
 RUN ln -s /usr/bin/python3 /usr/bin/python
 
+USER root
+RUN chown -R ${MY_UID} ${HOME}
+
+# Switch to our newly created user
+USER ${username}
+# Set the cwd to home
+WORKDIR ${HOME}
 # install oh-my-zsh with powerlevel10k for user
 RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.1/zsh-in-docker.sh)" -- \
     -p git -p python -p pylint -p command-not-found -p history-substring-search
 
-USER root
-RUN chown -R ${MY_UID} ${HOME}
-# Disallow writing to the /app directory so students do not delete their work accidentally. 
-RUN chmod -R 555 /app
-
-# Set the cwd to /results
-WORKDIR ${HOME}
-
-# Switch to our newly created user
-USER ${username}
+# Set the cwd to results
+WORKDIR /results
 
 # Allow incoming connections on port 8888
 EXPOSE 8888
-
-# Sit in "results"
-WORKDIR ${HOME}
 
 # Run notebook when the container launches
 CMD ["jupyter-lab", "--ip", "0.0.0.0"]
