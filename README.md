@@ -1,44 +1,32 @@
-# Implementing a full adder on a Quantum Computer (really meaningful title here)
+# Implementing a full adder and phase calculator on a Quantum Computer 
 
-This serves as a homework template for CP1 2021 Homework3.
 
 ## Introduction
 
-You should include a short introduction what the project is about. Don't forget to include references/attribution to anything you read (documentation) or use(code) from somewhere else. Make sure you have the rights to do so as well.
+The code in Adder.ipynb serves as a full adder that can calculate 1+1+1=3 on a quantum computer, and Phase.ipynb correctly calculates the input angle.
 
 ## Setup
 
-A detailed outline how to get you project running.
 
-e.g.
-
-1. You have to make an account on IBM qiskit
-2. You should use Quantum Composer to do upload the Jupyter notebook from this repository to do this and that
-3. ...
-4. Press the run button to run it on a Quantum Computer, yeah!
+1. I made an account on IBM qiskit (https://quantum-computing.ibm.com/composer/files/new?initial=N4IgdghgtgpiBcIASB1AxARngAgGIFcAbQ7CAEzJgCdsAKDAagCYBeAZgEpsQAaEARwgBnKAhAB5AAoBRAHIBFAIIBlALLYmAOgAMAbgA6YAJZgAxoXyVs%2BgTEJGARhk0nTNg2EP8qMAObZ%2BAG0AVgBdD1Mff1MQ8MNDHyEYABcAwO04sESUtIxM7NSgpkzTAA80jJ4gthLyoLyqwJqIusDixubDUzKK0MaGoIAWEp6ivqDKoZHWgbbxwOGPWGF8HzSa7ABaAD5sGM6wZaFVmDThrd2Yxd4QSiFIowAHZKMAezAxEABfIA)
+2. I used the IBM Quantum Composer to graphically assemble a circuit with 3 input qubits that can be initialized to 0 or 1, and the circuit computed its addition.
+3. I then recreated this circuit in a Jupyter notebook using the IBM Quantum Lab, and ran it on ibm_quito, and verified it works correctly.
+4. I then made another circuit in IBM Quantum Composer to calculate the real part of phase for the phase calculator and then did the same for the imaginary part.
+5. I then recreated these circuits in the IBM Quantum Lab Jupyter notebook, got the x and y counts, normalized them and then used the atan2() function to get the phase again.
+6. To see this in action, just open the Adder.ipynb and Phase.ipynb files and run them on your machines!
 
 ## Results
 
-Describe your results / outcome here.
+my code could count to three for the following cases:
 
-e.g. I could count to three for the following cases:
+1. 1+1+1=3
 
-1. 1+2=3
-
-my code could not count to four for the following cases:
-
-1. 1+1+1+1=3
+my code could get the result for phase of π/3
 
 ## Discussion
 
-Put in a discussion here.
-
-e.g. My code could compute 1+2=3, however it took the QC 3 seconds and out of 1024 trials it did it wrong in 2% of the cases. So it might be not the best choice for this task. However, they are awesome for optimizing the [traveling salesman problem](https://xkcd.com/285/).
+My adder got the accurate sum with a prabability of 0.492, and it got pretty close (1.0188202912233635) to the value of π/3 (= 1.047197551196597) when run on a quantum computer. It is not fully accurate because this is not an ideal problem to be solved on a quantum conputer.
 
 ## Outlook
 
-Something you thought about but couldn't implement it.
-
-e.g.
-
-If I would do X and Y my implementation could even count to -3.
+The Adder.ipynb can be expanded further to calculate additions of more than 3 qubits, but I could not implement it.
