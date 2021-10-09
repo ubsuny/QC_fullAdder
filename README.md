@@ -8,7 +8,7 @@ The code in Adder.ipynb serves as a full adder that can calculate 1+1+1=3 on a q
 ## Setup
 
 
-1. I made an account on IBM qiskit
+1. I made an account on IBM qiskit (https://quantum-computing.ibm.com/composer/files/new?initial=N4IgdghgtgpiBcIASB1AxARngAgGIFcAbQ7CAEzJgCdsAKDAagCYBeAZgEpsQAaEARwgBnKAhAB5AAoBRAHIBFAIIBlALLYmAOgAMAbgA6YAJZgAxoXyVs%2BgTEJGARhk0nTNg2EP8qMAObZ%2BAG0AVgBdD1Mff1MQ8MNDHyEYABcAwO04sESUtIxM7NSgpkzTAA80jJ4gthLyoLyqwJqIusDixubDUzKK0MaGoIAWEp6ivqDKoZHWgbbxwOGPWGF8HzSa7ABaAD5sGM6wZaFVmDThrd2Yxd4QSiFIowAHZKMAezAxEABfIA)
 2. I used the IBM Quantum Composer to graphically assemble a circuit with 3 input qubits that can be initialized to 0 or 1, and the circuit computed its addition.
 3. I then recreated this circuit in a Jupyter notebook using the IBM Quantum Lab, and ran it on ibm_quito, and verified it works correctly.
 4. I then made another circuit in IBM Quantum Composer to calculate the real part of phase for the phase calculator and then did the same for the imaginary part.
