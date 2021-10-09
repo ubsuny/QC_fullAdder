@@ -25,7 +25,7 @@ my code could get the result for phase of π/3
 
 ## Discussion
 
-My adder got the accurate sum with a prabability of 0.492, and it got pretty close (1.0188202912233635) to the value of π/3 (= 1.047197551196597) when run on a quantum computer. It is not fully accurate because this is not an ideal problem to be solved on a quantum conputer.
+My adder got the accurate sum with a prabability of 0.492, and it got pretty close (1.0188202912233635) to the value of π/3 (= 1.047197551196597) when run on a quantum computer. It is not fully accurate because this is not an ideal problem to be solved on a quantum computer.
 
 ## Outlook
 
