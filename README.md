@@ -30,3 +30,10 @@ My adder got the accurate sum with a prabability of 0.492, and it got pretty clo
 ## Outlook
 
 The Adder.ipynb can be expanded further to calculate additions of more than 3 qubits, but I could not implement it.
+
+
+## References 
+ 1. https://qiskit.org/textbook/ch-states/representing-qubit-states.html
+ 2. https://qiskit.org/textbook/ch-demos/chsh.html
+ 3. https://quantum-computing.ibm.com/composer/docs/iqx/guide/introducing-qubit-phase
+ 4. https://www.ibm.com/quantum-computing/quantum-computing-at-ibm/
