@@ -5,8 +5,7 @@ This project includes the implementation of a Full Adder and Phase Shift Measure
 
 The Full Adder uses the example of 1+1+1 = 3.
 
-The Phase Shift Measurement Scheme is able to determine the phase that a qubit underwent after being split and recombined by a Hadamard gate. The example used is $\frac{\pi}{3}$
-
+The Phase Shift Measurement Scheme is able to determine the phase that a qubit underwent after being split and recombined by a Hadamard gate. The example used is pi/3.
 
 ## References 
 1. https://qiskit.org/textbook/ch-states/representing-qubit-states.html
