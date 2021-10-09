@@ -1,7 +1,7 @@
 # Implementing a full adder on a Quantum Computer and a phase shift measurement scheme
 
 ## Introduction
-This project includes the implementation of a Full Adder and Phase Shift Measurement Scheme on IBMs Quantum Computer using Qiskit.
+This project includes the implementation of a Full Adder and Phase Shift Measurement Scheme on IBM's Quantum Computer using Qiskit.
 
 The Full Adder uses the example of 1+1+1 = 3.
 
