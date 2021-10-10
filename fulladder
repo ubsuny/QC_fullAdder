@@ -29,4 +29,3 @@ circuit.ccx(qreg_q[1], qreg_q[2], qreg_q[4])
 circuit.measure(qreg_q[3], creg_c[3])
 circuit.measure(qreg_q[4], creg_c[4])
 
-
