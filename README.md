@@ -1,44 +1,30 @@
-# Implementing a full adder on a Quantum Computer (really meaningful title here)
-
-This serves as a homework template for CP1 2021 Homework3.
+# Implementing a Full Adder and Computing an Unknown Phase Change on a Quantum Computer 
 
 ## Introduction
 
-You should include a short introduction what the project is about. Don't forget to include references/attribution to anything you read (documentation) or use(code) from somewhere else. Make sure you have the rights to do so as well.
+This project consists of two parts: implementing a full adder and computing an unknown phase change on a quantum computer. For the full adder, three qubits are added together in a sum and carry structure to obtain the result of 3. For the phase change, a preset phase change of pi/2 was used and then recovered through computation and running the two circuits on a quantum computer.
 
 ## Setup
 
-A detailed outline how to get you project running.
-
-e.g.
-
 1. You have to make an account on IBM qiskit
-2. You should use Quantum Composer to do upload the Jupyter notebook from this repository to do this and that
-3. ...
-4. Press the run button to run it on a Quantum Computer, yeah!
+2. You should use Quantum Composer to do upload the Jupyter notebook from this repository
+3. Each cell should be run sequentially in order to obtain the result
 
 ## Results
 
-Describe your results / outcome here.
+For the full adder, I was able to count to three with the case of 1 + 1 + 1 = 3. 
 
-e.g. I could count to three for the following cases:
-
-1. 1+2=3
-
-my code could not count to four for the following cases:
-
-1. 1+1+1+1=3
+For the quantum phase computer, I was able to recover the phase change of pi/2 with a good degree of accuracy. 
 
 ## Discussion
 
-Put in a discussion here.
+I made note of the fact that I would like to implement more and more interesting cases as well for the full adder. Additionally, the result was not incredibly decisive. The desired result was the most probable, but not by much.
 
-e.g. My code could compute 1+2=3, however it took the QC 3 seconds and out of 1024 trials it did it wrong in 2% of the cases. So it might be not the best choice for this task. However, they are awesome for optimizing the [traveling salesman problem](https://xkcd.com/285/).
+The phase calculator worked essentially as expected. 
+
 
 ## Outlook
 
-Something you thought about but couldn't implement it.
+I would like to implement more cases for both the full adder and the quantum phase calculator. I would like to ensure that the full adder works for all of the possible input cases, and I would like to ensure that the phase calculator works for phases apart from pi/2.
 
-e.g.
-
-If I would do X and Y my implementation could even count to -3.
+Additionally, more qubits could be implemented to the full adder in order to count to higher numbers, or to commence mathematical operations apart from addition.
