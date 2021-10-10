@@ -1,7 +1,7 @@
 from qiskit import IBMQ
 
 #Load our IBM quantum ID, so we can log in even from our local docker image. Then we specify the quantum computer system that we will use to run the circuit
-IBMQ.save_account('da39d2dc01d06a1425bff969f49213b0fbefc544577a91c349c099e111d30b28198cdb00681f68711455476cd7fd2cc24ed59bd4c19d36b2a18a8586edd09368')
+IBMQ.save_account('API_KEY')
 IBMQ.load_account()
 provider = IBMQ.get_provider('ibm-q')
 quito = provider.get_backend('ibmq_quito')
