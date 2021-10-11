@@ -1,0 +1,55 @@
+from qiskit import IBMQ
+
+#Load our IBM quantum ID, so we can log in even from our local docker image. Then we specify the quantum computer system that we will use to run the circuit
+IBMQ.save_account('API_KEY')
+IBMQ.load_account()
+provider = IBMQ.get_provider('ibm-q')
+quito = provider.get_backend('ibmq_quito')
+sim = Aer.get_backend('aer_simulator')
+
+#Qiskit tools needed for the task such as drawing the circuit and displaying results
+from qiskit import QuantumCircuit, ClassicalRegister, QuantumRegister, transpile, Aer
+from qiskit.tools.visualization import circuit_drawer
+from qiskit.visualization import plot_histogram
+from qiskit.tools.monitor import job_monitor, backend_monitor, backend_overview
+from qiskit.providers.aer import noise
+
+#I don't know why this is here... 
+from numpy import pi
+
+#import python tool. Defining time is also important later when we have the circuit run on the quantum computer
+import matplotlib.pyplot as plt
+import time
+
+qreg_q = QuantumRegister(5, 'q')
+creg_c = ClassicalRegister(5, 'c')
+circuit = QuantumCircuit(qreg_q, creg_c)
+
+circuit.reset(qreg_q[0])
+circuit.reset(qreg_q[1])
+circuit.reset(qreg_q[2])
+circuit.reset(qreg_q[3])
+circuit.reset(qreg_q[4])
+circuit.x(qreg_q[0])
+circuit.x(qreg_q[2])
+circuit.x(qreg_q[1])
+circuit.cx(qreg_q[0], qreg_q[3])
+circuit.cx(qreg_q[1], qreg_q[3])
+circuit.cx(qreg_q[2], qreg_q[3])
+circuit.ccx(qreg_q[0], qreg_q[1], qreg_q[4])
+circuit.ccx(qreg_q[0], qreg_q[2], qreg_q[4])
+circuit.ccx(qreg_q[1], qreg_q[2], qreg_q[4])
+circuit.measure(qreg_q[3], creg_c[3])
+circuit.measure(qreg_q[4], creg_c[4])
+
+#This section is borrowed from Bell Inequality notebook, it sends the circuit to the quantum comouter to run
+tic = time.time()
+transpiled_circuits = transpile(circuit, quito)
+job_real = quito.run(transpiled_circuits, shots=8192) #let the quantum computer run the same circuit 8192 times
+job_monitor(job_real)
+result_real = job_real.result()
+toc = time.time()
+
+print(toc-tic)
+
+
