@@ -1,0 +1,20 @@
+{
+  "id": "615ce61fceec1b5f3d6fa99d",
+  "userId": "61317961b6caabae2b777896",
+  "name": "Quantum phase determination implementation",
+  "status": "COMPLETED",
+  "creationDate": "2021-10-05T23:56:15.010Z",
+  "endDate": "2021-10-06T00:05:13.948Z",
+  "backend": {
+    "id": "60103afaca625b70a5b1694c",
+    "name": "ibmq_quito"
+  },
+  "tags": [],
+  "provider": {
+    "hub": "ibm-q",
+    "group": "open",
+    "project": "main",
+    "backend": "ibmq_quito"
+  },
+  "runMode": "fairshare"
+}

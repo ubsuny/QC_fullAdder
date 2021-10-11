@@ -1,0 +1,90 @@
+{
+  "backend_name": "ibmq_quito",
+  "backend_version": "1.1.11",
+  "qobj_id": "c17fd3f9-67a9-4db2-af0f-b15a2192a94a",
+  "job_id": "615ce5d1f9a6d9bb6898f232",
+  "success": true,
+  "status": "Successful completion",
+  "time_taken": 3.6086456775665283,
+  "results": [
+    {
+      "data": {
+        "counts": {
+          "0x0": 17,
+          "0x4": 173,
+          "0x8": 102,
+          "0xc": 708
+        }
+      },
+      "header": {
+        "clbit_labels": [
+          [
+            "c",
+            0
+          ],
+          [
+            "c",
+            1
+          ],
+          [
+            "c",
+            2
+          ],
+          [
+            "c",
+            3
+          ]
+        ],
+        "creg_sizes": [
+          [
+            "c",
+            4
+          ]
+        ],
+        "global_phase": 3.926990816987246,
+        "memory_slots": 4,
+        "metadata": {},
+        "n_qubits": 5,
+        "name": "circuit-18428",
+        "qreg_sizes": [
+          [
+            "q",
+            5
+          ]
+        ],
+        "qubit_labels": [
+          [
+            "q",
+            0
+          ],
+          [
+            "q",
+            1
+          ],
+          [
+            "q",
+            2
+          ],
+          [
+            "q",
+            3
+          ],
+          [
+            "q",
+            4
+          ]
+        ]
+      },
+      "meas_level": 2,
+      "memory": false,
+      "shots": 1000,
+      "success": true
+    }
+  ],
+  "date": "2021-10-06T00:05:02Z",
+  "execution_id": "0b849d12-2639-11ec-a65e-b02628f7f59e",
+  "header": {
+    "backend_name": "ibmq_quito",
+    "backend_version": "1.1.11"
+  }
+}

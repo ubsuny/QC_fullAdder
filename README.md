@@ -1,44 +1,34 @@
-# Implementing a full adder on a Quantum Computer (really meaningful title here)
-
-This serves as a homework template for CP1 2021 Homework3.
+# CP1 2021 Homework3 Jinrui Bai 
 
 ## Introduction
 
-You should include a short introduction what the project is about. Don't forget to include references/attribution to anything you read (documentation) or use(code) from somewhere else. Make sure you have the rights to do so as well.
+This is a homework project for CP1 2021, which including assignments from #1 to #3. This project is mainly based on using quantum computer on IBM qiskit: [IBM Quantum Computer: https://quantum-computing.ibm.com/](https://quantum-computing.ibm.com/)
 
 ## Setup
 
-A detailed outline how to get you project running.
+Here is a detailed outline about what I did in this project:
 
-e.g.
+1. I first made an account on IBM qiskit to start the homework;
+2. For homework #1, I should make a full adder circuit that could at least calculate 1+2=3. So basically I used **the half adder** that was introduced in class **with additional cnot and toffoli gates** to build my full adder as shown below;
 
-1. You have to make an account on IBM qiskit
-2. You should use Quantum Composer to do upload the Jupyter notebook from this repository to do this and that
-3. ...
-4. Press the run button to run it on a Quantum Computer, yeah!
+![full adder circuit](circuit-kuev09nc.png)
+
+3. For homework #2, I implemented the full adder circuit above and **another circuit to determine the quantum phase** in IBM Quantum Lab. The picture of the circuit to determine the quantum phase is also shown below;
+
+![A circuit to determine the quantum phase ](circuit-kufn9six.png)
+
+4. Then I setup and run both of my circuits on IBM qiskit and get my results as shown in the codes list;
+5. Next I wrote the required documentation on the Jupyter Notebook from IBM Quantum Lab as shown in **Homework #2 P2 Jinrui Bai.ipynb**;
+6. Last I followed the procedures in Homework #3 problem #1 to set up my git repository and all my works are shown.
 
 ## Results
 
-Describe your results / outcome here.
-
-e.g. I could count to three for the following cases:
-
-1. 1+2=3
-
-my code could not count to four for the following cases:
-
-1. 1+1+1+1=3
+My full adder circuit could calculate 1+2=3 as a classical computer do, but it requires more operators and gates to make it happen. Thus in summary, we should not use a quantum computer to solve classical problems in practice, though it is technically feasible.
 
 ## Discussion
 
-Put in a discussion here.
-
-e.g. My code could compute 1+2=3, however it took the QC 3 seconds and out of 1024 trials it did it wrong in 2% of the cases. So it might be not the best choice for this task. However, they are awesome for optimizing the [traveling salesman problem](https://xkcd.com/285/).
+Though my full adder circuit calculated 1+2=3 right, it took the quantum computer 10 seconds and 1000 trials to calculate it wrong in 30% of the cases. Thus there must be some better solutions for this simple classical problem but anyway this circuit helps me understand quantum computer.
 
 ## Outlook
 
-Something you thought about but couldn't implement it.
-
-e.g.
-
-If I would do X and Y my implementation could even count to -3.
+My circuit could calculate more complex problems if I can attribute friction numbers to my variables or even extend them to imaginary numbers.
